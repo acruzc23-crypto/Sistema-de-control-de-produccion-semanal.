@@ -1,1 +1,55 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de producción</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">Control de Producción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dimension Dias</td>
+                <td>
+                    <select id="id-select-dias">
+                        <option value="5" selected>5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="id-btn-cargar-produccion">Cargar Producción</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="id-btn-presentar-produccion">Presentar</button>
+                </td>
+                <td>
+                    <textarea id="id-listado-produccion" rows="3" readonly>
+                        
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id ="id-Generar">Generar</button>
+                </td>
+                <td>
+                    <textarea id="id-Respuesta" rows="3" readonly>
+                    </textarea> 
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <script src="app.js"></script>
+</body>
+</html>
