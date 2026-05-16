@@ -1,1 +1,271 @@
+# Sistema de Gestión de Producción Semanal
 
+## Descripción General
+
+Este proyecto consiste en un sistema desarrollado para simular y analizar la producción semanal de una empresa mediante el uso de vectores en JavaScript.
+
+El usuario podrá realizar las siguientes acciones:
+
+- Seleccionar la cantidad de días de producción.
+- Generar datos aleatorios de producción.
+- Visualizar la producción diaria.
+- Obtener estadísticas automáticas sobre la producción semanal.
+
+### Tecnologías utilizadas
+
+- HTML
+- JavaScript
+
+---
+
+# Archivo HTML
+
+## Archivo
+`Sistema de control.html`
+
+## Función
+Contiene toda la interfaz gráfica del sistema y los elementos con los que interactúa el usuario.
+
+---
+
+# Componentes de la Interfaz
+
+## Selector de días
+
+```html
+<select id="id-select-dias">
+```
+
+Permite seleccionar:
+
+- 5 días
+- 6 días
+- 7 días
+
+---
+
+## Botón “Cargar Producción”
+
+```html
+<button id="id-btn-cargar-produccion">
+```
+
+Genera valores aleatorios de producción.
+
+---
+
+## Botón “Presentar”
+
+```html
+<button id="id-btn-presentar-produccion">
+```
+
+Muestra la producción diaria almacenada en el vector.
+
+---
+
+## Área de texto de producción
+
+```html
+<textarea id="id-listado-produccion">
+```
+
+Presenta los datos de producción generados.
+
+---
+
+## Botón “Generar”
+
+```html
+<button id="id-Generar">
+```
+
+Calcula las estadísticas de producción.
+
+---
+
+## Área de resultados
+
+```html
+<textarea id="id-Respuesta">
+```
+
+Muestra:
+
+- Producción total
+- Mayor producción
+- Menor producción
+- Promedio semanal
+- Días críticos
+- Valores repetidos
+
+---
+
+## Conexión con JavaScript
+
+```html
+<script type="module" src="Productos semanales vectores.js"></script>
+```
+
+---
+
+# Archivo JavaScript
+
+## Archivo
+`Productos semanales vectores.js`
+
+## Función
+Controla toda la lógica y funcionamiento del sistema.
+
+---
+
+# Variables Principales
+
+## Selector de días
+
+```javascript
+const selectDiasProduccion = document.getElementById('id-select-dias')
+```
+
+## Botones
+
+```javascript
+const btnCargarProduccion
+const btnPresentarProduccion
+const btnGenerar
+```
+
+## Áreas de texto
+
+```javascript
+const txtPresentarProduccion
+const txtRespuesta
+```
+
+---
+
+# Vector de Días
+
+```javascript
+const diasTexto = [
+    "Lunes", "Martes", "Miércoles",
+    "Jueves", "Viernes",
+    "Sábado", "Domingo"
+]
+```
+
+Este vector almacena los nombres de los días de la semana.
+
+---
+
+# Vector de Producción
+
+```javascript
+let vectorProduccion = []
+```
+
+Almacena los datos de producción generados aleatoriamente.
+
+---
+
+# Eventos del Sistema
+
+## Evento: Cargar Producción
+
+```javascript
+btnCargarProduccion.addEventListener('click', function () {
+```
+
+### Función
+
+- Obtiene la cantidad de días seleccionada.
+- Ejecuta la función `cargarProduccion()`.
+
+---
+
+## Evento: Presentar Producción
+
+```javascript
+btnPresentarProduccion.addEventListener('click', function () {
+```
+
+### Función
+
+Recorre el vector y muestra:
+
+- Número del día
+- Nombre del día
+- Producción generada
+
+---
+
+## Evento: Generar Estadísticas
+
+```javascript
+btnGenerar.addEventListener('click', function () {
+```
+
+### Función
+
+Calcula:
+
+- Producción total
+- Mayor producción
+- Menor producción
+- Promedio semanal
+- Días sobre el promedio
+- Días críticos
+- Valores repetidos
+
+---
+
+# Función Principal
+
+```javascript
+function cargarProduccion(dimension)
+```
+
+## Función
+
+Genera números aleatorios entre 50 y 249 y los almacena en el vector de producción.
+
+## Generación aleatoria
+
+```javascript
+Math.floor(Math.random() * 200) + 50
+```
+
+---
+
+# Funcionamiento General del Sistema
+
+## Paso 1
+Seleccionar la cantidad de días.
+
+## Paso 2
+Presionar el botón **“Cargar Producción”**.
+
+## Paso 3
+Presionar **“Presentar”** para visualizar los datos generados.
+
+## Paso 4
+Presionar **“Generar”** para obtener las estadísticas.
+
+---
+
+# Conceptos Aplicados
+
+- Vectores
+- Ciclos `for`
+- Condicionales `if`
+- Eventos
+- Funciones
+- Generación aleatoria
+- Promedios
+- Estadísticas
+
+---
+
+# Conclusión
+
+El sistema permite generar automáticamente cantidades de producción para los distintos días de la semana. Posteriormente, procesa la información para calcular la producción total, identificar el día con mayor y menor producción, obtener el promedio semanal, detectar los días que superan el promedio, reconocer días críticos y verificar si existen valores repetidos dentro de los datos registrados.
